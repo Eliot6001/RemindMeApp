@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="py-3 shadow flex items-center px-3  bg-teal-500 md:px-10 md:py-5">
+            <span class="flex items-center">
+                <img src="./bell.svg" width="23">
+                <p class="text-white ml-1">RemindMeApp</p>
+            </span>
+
+            <div class="relative inline-block text-left ml-auto">
+                <button type="button" aria-expanded="false"
+                    class="w-10 relative rounded hover:bg-zinc-100/50 black h-8 py-3 flex items-center btn ml-auto bg-teal-500 hover:bg-teal-400 active:bg-teal-300"
+                    id="menu-button id=" menu-button" aria-expanded="false" aria-haspopup="true"
+                    onclick="toggleDropdown()">
+                    <svg class="absolute " width="100%" height="100%" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <g fill="#F6F6F6">
+                            <rect width="4" height="4" x="10" y="3" rx="2" />
+                            <rect width="4" height="4" x="10" y="10" rx="2" />
+                            <rect width="4" height="4" x="10" y="17" rx="2" />
+                        </g>
+                    </svg>
+
+                </button>
+
+                <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black
+                ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical"
+                    aria-labelledby="menu-button" tabindex="-1" id="dropdown-menu" aria-expanded="false">
+                    <div class="py-1" role="none">
+                        <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                            id="menu-item-0">Settings</a>
+                        <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                            id="menu-item-1">Support</a>
+                        <a href="http://github.com/eliot6001" class="text-gray-700 block px-4 py-2 text-sm"
+                            role="menuitem" tabindex="-1" id="menu-item-2">License</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container appData md:m-8 md:p-3 md:pl-10 shadow">
+            <div class="labels select-none flex text-white bg-teal-500 bg-opacity-75 shadow rounded mt-1">
+                <span id="active"
+                    class="rounded-l px-4 py-2 hover:bg-teal-400 hover:text-slate-950 active:bg-teal-300 active:text-slate-700 transition-colors">Upcoming</span>
+                <span
+                    class=" px-4 py-2 hover:bg-teal-400 hover:text-slate-950 active:text-slate-700 active:bg-teal-300 transition-colors" id="Uncompleted">Uncompleted</span>
+                <span
+                    class=" rounded-r px-4 py-2 hover:bg-teal-400  hover:text-slate-950 active:text-slate-700 active:bg-teal-300 transition-colors select-none"
+                    id="completedBtn">Completed</span>
+            </div>
+            <div class="reminders rounded flex flex-col divide-y  space-y-2 relative bg-[#F6F6F6] border shadow px-3 pt-2 md:mt-5 md:px-5"
+                id="reminders">
+
+                <span class="reminder py-3 duration-1000 transition flex items-center fadeaway">
+                    <span class="w-1.5 mr-1.5 min-h-full bg-zinc-300 rounded-l"></span>
+                    <span>
+                        <p>Water with flowers</p>
+                        <p>10/10/2010 - 5:00PM</p>
+                        <span>icons</span>
+                    </span>
+                    <span class="ml-auto" onClick="toggleDotFill(this)">
+                        <svg class="dot" width="20" height="20" viewBox="0 0 20 20">
+                            <circle class="dot-outline" cx="10" cy="10" r="9" stroke="black" stroke-width="0.23"
+                                fill="transparent" />
+                            <circle class="dot-fill" cx="10" cy="10" r="5" fill="transparent" />
+                        </svg>
+                    </span>
+                </span>
+                <span class="reminder py-3 duration-1000 transition flex items-center fadeaway">
+                    <span class="w-1.5 mr-1.5 bg-zinc-500 rounded-l"></span>
+                    <span>
+                        <p>Water with flowers</p>
+                        <p>10/10/2010 - 5:00PM</p>
+                        <span>icons</span>
+                    </span>
+                    <span class="ml-auto" onClick="toggleDotFill(this)">
+                        <svg class="dot" width="20" height="20" viewBox="0 0 20 20">
+                            <circle class="dot-outline" cx="10" cy="10" r="9" stroke="black" stroke-width="0.23"
+                                fill="transparent" />
+                            <circle class="dot-fill" cx="10" cy="10" r="5" fill="transparent" />
+                        </svg>
+                    </span>
+                </span>
+                <span class="reminder py-3 duration-1000 transition flex items-center fadeaway">
+                    <span class="w-1.5 mr-1.5 bg-zinc-500 rounded-l"></span>
+                    <span>
+                        <p>Water with flowers</p>
+                        <p>10/10/2010 - 5:00PM</p>
+                        <span>icons</span>
+                    </span>
+                    <span class="ml-auto" onClick="toggleDotFill(this)">
+                        <svg class="dot" width="20" height="20" viewBox="0 0 20 20">
+                            <circle class="dot-outline" cx="10" cy="10" r="9" stroke="black" stroke-width="0.23"
+                                fill="transparent" />
+                            <circle class="dot-fill" cx="10" cy="10" r="5" fill="transparent" />
+                        </svg>
+                    </span>
+                </span>
+                <span class="reminder py-3 duration-1000 transition flex items-center fadeaway">
+                    <span class="w-1.5 mr-1.5 bg-zinc-500 rounded-l"></span>
+                    <span>
+                        <p>Water with flowers</p>
+                        <p>10/10/2010 - 5:00PM</p>
+                        <span>icons</span>
+                    </span>
+                    <span class="ml-auto" onClick="toggleDotFill(this)">
+                        <svg class="dot" width="20" height="20" viewBox="0 0 20 20">
+                            <circle class="dot-outline" cx="10" cy="10" r="9" stroke="black" stroke-width="0.23"
+                                fill="transparent" />
+                            <circle class="dot-fill" cx="10" cy="10" r="5" fill="transparent" />
+                        </svg>
+                    </span>
+                </span>
+                <span class="reminder py-3 duration-1000 transition flex items-center fadeaway">
+                    <span class="w-1.5 mr-1.5 bg-zinc-500 rounded-l"></span>
+                    <span>
+                        <p>Water with flowers</p>
+                        <p>10/10/2010 - 5:00PM</p>
+                        <span>icons</span>
+                    </span>
+                    <span class="ml-auto" onClick="toggleDotFill(this)">
+                        <svg class="dot" width="20" height="20" viewBox="0 0 20 20">
+                            <circle class="dot-outline" cx="10" cy="10" r="9" stroke="black" stroke-width="0.23"
+                                fill="transparent" />
+                            <circle class="dot-fill" cx="10" cy="10" r="5" fill="transparent" />
+                        </svg>
+                    </span>
+                </span>
+
+
+                <span class="reminder py-3 duration-1000 transition flex items-center fadeaway">
+                    <span class="w-1.5 mr-1.5 bg-zinc-500 rounded-l"></span>
+                    <span>
+                        <p>Water with flowers</p>
+                        <p>10/10/2010 - 5:00PM</p>
+                        <span>icons</span>
+                    </span>
+                    <span class="ml-auto" onClick="toggleDotFill(this)">
+                        <svg class="dot" width="20" height="20" viewBox="0 0 20 20">
+                            <circle class="dot-outline" cx="10" cy="10" r="9" stroke="black" stroke-width="0.23"
+                                fill="transparent" />
+                            <circle class="dot-fill" cx="10" cy="10" r="5" fill="transparent" />
+                        </svg>
+                    </span>
+                </span>
+
+
+                <span class="reminder py-3 duration-1000 transition flex items-center fadeaway">
+                    <span class="w-1.5 mr-1.5 bg-zinc-500 rounded-l"></span>
+                    <span>
+                        <p>Water with flowers</p>
+                        <p>10/10/2010 - 5:00PM</p>
+                        <span>icons</span>
+                    </span>
+                    <span class="ml-auto" onClick="toggleDotFill(this)">
+                        <svg class="dot" width="20" height="20" viewBox="0 0 20 20">
+                            <circle class="dot-outline" cx="10" cy="10" r="9" stroke="black" stroke-width="0.23"
+                                fill="transparent" />
+                            <circle class="dot-fill" cx="10" cy="10" r="5" fill="transparent" />
+                        </svg>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

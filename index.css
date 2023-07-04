@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --primary-color: #FF6F61;
+    --secondary-color: #6fc1c3;
+    --secondary-color-alpha: #67cfd3;
+    --accent-color: #FFD166;
+    --background-color: #F6F6F6;
+}
+
+
+.topbar .topnav-title,
+.topbar .topnav-title * {
+    background-color: var(--secondary-color);
+}
+
+.colorbar {
+    background: var(--secondary-color);
+}
+.filled {
+    fill: #5cb85c; /* Replace with your desired fill color */
+}
+
+.fadeaway {
+    position: relative;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.fadeaway.fade-out {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+.fadeaway.removing {
+    animation: fadeOut 0.87s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
